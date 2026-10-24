@@ -70,7 +70,7 @@ Layer 4: MCP Protocol
 
 ```bash
 # Clone and build
-git clone https://github.com/redbasecap-buiss/chrome-mcp.git
+git clone https://github.com/quantumnic/chrome-mcp.git
 cd chrome-mcp
 cargo build --release
 
@@ -358,7 +358,7 @@ Contributions welcome! Please read our [Contributing Guide](CONTRIBUTING.md) fir
 
 ### Development Setup
 ```bash
-git clone https://github.com/redbasecap-buiss/chrome-mcp.git
+git clone https://github.com/quantumnic/chrome-mcp.git
 cd chrome-mcp
 
 # Install dev dependencies
@@ -387,7 +387,7 @@ Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for detai
 
 ## 🔗 Links
 
-- **GitHub**: https://github.com/redbasecap-buiss/chrome-mcp
+- **GitHub**: https://github.com/quantumnic/chrome-mcp
 - **MCP Protocol**: https://modelcontextprotocol.io
 - **Chrome DevTools**: https://chromedevtools.github.io/devtools-protocol/
 
