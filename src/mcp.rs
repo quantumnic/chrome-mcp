@@ -15,9 +15,13 @@ pub struct McpServer {
 /// MCP Server capabilities
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ServerCapabilities {
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub tools: Option<ToolsCapability>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub logging: Option<LoggingCapability>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub prompts: Option<PromptsCapability>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub resources: Option<ResourcesCapability>,
 }
 
@@ -49,10 +53,15 @@ pub struct ResourcesCapability {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct McpMessage {
     pub jsonrpc: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub id: Option<Value>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub method: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub params: Option<Value>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub result: Option<Value>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub error: Option<McpError>,
 }
 
@@ -61,6 +70,7 @@ pub struct McpMessage {
 pub struct McpError {
     pub code: i32,
     pub message: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub data: Option<Value>,
 }
 
@@ -69,6 +79,7 @@ pub struct McpError {
 pub struct Tool {
     pub name: String,
     pub description: String,
+    #[serde(rename = "inputSchema", alias = "input_schema")]
     pub input_schema: Value,
 }
 
@@ -221,7 +232,12 @@ impl McpServer {
             method: None,
             params: None,
             result: Some(json!({
-                "protocolVersion": "1.0.0",
+                "protocolVersion": msg
+                    .params
+                    .as_ref()
+                    .and_then(|p| p.get("protocolVersion"))
+                    .and_then(|v| v.as_str())
+                    .unwrap_or("2024-11-05"),
                 "serverInfo": {
                     "name": "chrome-mcp",
                     "version": "0.1.0"
