@@ -2,10 +2,10 @@
 name = "chrome-mcp"
 version = "0.1.0"
 edition = "2021"
-authors = ["Nicola Spieser <redbasecap-buiss@users.noreply.github.com>"]
+authors = ["Nicola Spieser <quantumnic@users.noreply.github.com>"]
 description = "Chrome browser automation via MCP – click anywhere"
 license = "Apache-2.0"
-repository = "https://github.com/redbasecap-buiss/chrome-mcp"
+repository = "https://github.com/quantumnic/chrome-mcp"
 keywords = ["chrome", "automation", "mcp", "browser", "devtools"]
 categories = ["development-tools", "automation"]
 
