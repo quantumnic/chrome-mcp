@@ -1,5 +1,7 @@
 # chrome-mcp
 
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/redbasecap)
+
 **Chrome browser automation via MCP – click anywhere**
 
 A Model Context Protocol (MCP) server that provides comprehensive Chrome browser automation capabilities. Unlike traditional browser automation tools that are limited to DOM elements, chrome-mcp can interact with **anything** in the browser – including browser UI, popups, shadow DOM, cross-origin iframes, and system dialogs.
